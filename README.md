@@ -1,2 +1,3 @@
-# baymax-simulation
-[Developing] Simulation of BayMax VA from Disney Big Hero 6 using Python
+# BayMax Simulation
+
+[Developing] Simulation of BayMax from Disney Big Hero 6 using Python
