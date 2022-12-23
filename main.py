@@ -13,7 +13,9 @@ class BayMax:
         self.speech_recognizer = speech_recognizer
 
     def greet(self):
-        self.voice_engine.say('Hi, I am BayMax, your personal healthcare companion')
+        self.voice_engine.say('Hello, I am Baymax, your personal healthcare companion. \
+            I was alerted to the need for medical attention when you said "ow! \
+            One the scale of 1 to 10, how would you rate your pain?')
         self.voice_engine.runAndWait()
 
     def speak(self, text_to_speech):
