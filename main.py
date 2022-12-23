@@ -30,7 +30,7 @@ def main():
     engine = pyttsx3.init()
     voices = engine.getProperty('voices')
     engine.setProperty('voice', voices[14].id)
-    engine.setProperty('rate', 175)
+    engine.setProperty('rate', 180)
 
     # Set up speech recognizer
     # TODO
