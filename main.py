@@ -23,8 +23,21 @@ class BayMax:
         self.voice_engine.runAndWait()
 
     def listen(self):
-        # TODO
-        pass 
+        query = None
+        r = sr.Recognizer()
+        with sr.Microphone() as source:
+            print("Listening...")
+            r.pause_threshold = 1.0
+            audio = r.listen(source)
+        try:
+            print("Recognizing...")
+            query = r.recognize_google(audio)
+            print(f'Human said: "{query}"\n')
+        except Exception as err:
+            self.voice_engine.say("Sorry, I did not catch what you said, please speak again")
+            self.voice_engine.runAndWait()
+            print(err)
+        return query
 
 
 def main():
@@ -34,12 +47,20 @@ def main():
     engine.setProperty('voice', voices[14].id)
     engine.setProperty('rate', 180)
 
-    # Set up speech recognizer
-    # TODO
-
     # Set up BayMax
     baymax = BayMax(voice_engine=engine, speech_recognizer=None)
-    baymax.greet()
+    is_activated = False
+    
+    # Baymax listens and responds
+    while True:
+        what_human_said = baymax.listen()
+        if "ouch" in what_human_said.lower():
+            is_activated = True
+            baymax.greet()
+        if "satisfied with my care" in what_human_said.lower():
+            baymax.speak('I am glad you are satisfied. Good bye!')
+            is_activated = False
+            break
 
 
 if __name__ == "__main__":

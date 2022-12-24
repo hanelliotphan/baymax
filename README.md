@@ -27,6 +27,12 @@ Then we need to run the command separately in the Terminal below:
 $ CFLAGS="-I/opt/homebrew/include -L/opt/homebrew/lib" python3 -m pip install pyaudio
 ```
 
+We need to install FLAC in order to recognize speech with the command below:
+```bash
+$ sudo port install flac
+```
+If you have not installed Macports, please download Macports from (this link)[https://www.macports.org/install.php]
+
 Then, we run
 ```bash
 $ python3 main.py
