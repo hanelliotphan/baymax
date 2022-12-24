@@ -1,6 +1,5 @@
 # Import libraries
 import datetime
-import os
 import pyttsx3
 import speech_recognition as sr
 import webbrowser
@@ -32,7 +31,7 @@ class Baymax:
             print(err)
         return query
 
-    def greet(self):
+    def activate(self):
         self.speak('Hello, I am Baymax, your personal healthcare companion. \
             I was alerted to the need for medical attention when you said..."Ow!"... \
             On the scale of 1 to 10, how would you rate your pain?')
@@ -41,6 +40,10 @@ class Baymax:
     def deactivate(self):
         self.speak('I am glad you are satisfied. Good bye!')
         return False
+
+    def greet(self):
+        # TODO
+        pass
 
 
 def main():
@@ -57,8 +60,8 @@ def main():
     # Baymax listens and responds
     while True:
         what_human_said = baymax.listen()
-        if "ouch" or "ow" in what_human_said.lower():
-            is_activated = baymax.greet()
+        if "ouch" in what_human_said.lower():
+            is_activated = baymax.activate()
         if "satisfied with my care" in what_human_said.lower():
             is_activated = baymax.deactivate()
             break
