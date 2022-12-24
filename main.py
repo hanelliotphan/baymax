@@ -39,6 +39,9 @@ class BayMax:
             print(err)
         return query
 
+    def deactivate(self):
+        self.speak('I am glad you are satisfied. Good bye!')
+
 
 def main():
     # Set up voice engine
@@ -58,7 +61,7 @@ def main():
             is_activated = True
             baymax.greet()
         if "satisfied with my care" in what_human_said.lower():
-            baymax.speak('I am glad you are satisfied. Good bye!')
+            baymax.deactivate()
             is_activated = False
             break
 
