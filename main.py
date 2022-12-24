@@ -7,7 +7,7 @@ import webbrowser
 import wikipedia
 
 
-class BayMax:
+class Baymax:
     def __init__(self, voice_engine, speech_recognizer):
         self.voice_engine = voice_engine
         self.speech_recognizer = speech_recognizer
@@ -51,7 +51,7 @@ def main():
     engine.setProperty('rate', 180)
 
     # Set up BayMax
-    baymax = BayMax(voice_engine=engine, speech_recognizer=None)
+    baymax = Baymax(voice_engine=engine, speech_recognizer=None)
     is_activated = False
     
     # Baymax listens and responds
