@@ -14,8 +14,8 @@ class BayMax:
 
     def greet(self):
         self.voice_engine.say('Hello, I am Baymax, your personal healthcare companion. \
-            I was alerted to the need for medical attention when you said "Ow!" \
-            One the scale of 1 to 10, how would you rate your pain?')
+            I was alerted to the need for medical attention when you said..."Ow!"... \
+            On the scale of 1 to 10, how would you rate your pain?')
         self.voice_engine.runAndWait()
 
     def speak(self, text_to_speech):
@@ -36,7 +36,6 @@ def main():
 
     # Set up speech recognizer
     # TODO
-
 
     # Set up BayMax
     baymax = BayMax(voice_engine=engine, speech_recognizer=None)
