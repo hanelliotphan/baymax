@@ -12,12 +12,6 @@ class BayMax:
         self.voice_engine = voice_engine
         self.speech_recognizer = speech_recognizer
 
-    def greet(self):
-        self.voice_engine.say('Hello, I am Baymax, your personal healthcare companion. \
-            I was alerted to the need for medical attention when you said..."Ow!"... \
-            On the scale of 1 to 10, how would you rate your pain?')
-        self.voice_engine.runAndWait()
-
     def speak(self, text_to_speech):
         self.voice_engine.say(text_to_speech)
         self.voice_engine.runAndWait()
@@ -34,13 +28,19 @@ class BayMax:
             query = r.recognize_google(audio)
             print(f'Human said: "{query}"\n')
         except Exception as err:
-            self.voice_engine.say("Sorry, I did not catch what you said, please speak again")
-            self.voice_engine.runAndWait()
+            self.speak("Sorry, I did not catch what you said, please speak again")
             print(err)
         return query
 
+    def greet(self):
+        self.speak('Hello, I am Baymax, your personal healthcare companion. \
+            I was alerted to the need for medical attention when you said..."Ow!"... \
+            On the scale of 1 to 10, how would you rate your pain?')
+        return True
+
     def deactivate(self):
         self.speak('I am glad you are satisfied. Good bye!')
+        return False
 
 
 def main():
@@ -57,12 +57,10 @@ def main():
     # Baymax listens and responds
     while True:
         what_human_said = baymax.listen()
-        if "ouch" in what_human_said.lower():
-            is_activated = True
-            baymax.greet()
+        if "ouch" or "ow" in what_human_said.lower():
+            is_activated = baymax.greet()
         if "satisfied with my care" in what_human_said.lower():
-            baymax.deactivate()
-            is_activated = False
+            is_activated = baymax.deactivate()
             break
 
 
