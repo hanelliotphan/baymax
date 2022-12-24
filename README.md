@@ -31,7 +31,7 @@ We need to install FLAC in order to recognize speech with the command below:
 ```bash
 $ sudo port install flac
 ```
-If you have not installed Macports, please download Macports from (this link)[https://www.macports.org/install.php]
+If you have not installed Macports, please download Macports from [this link](https://www.macports.org/install.php)
 
 Then, we run
 ```bash
