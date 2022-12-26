@@ -1,5 +1,6 @@
 # Import libraries
-from baymax import *
+from baymax import Baymax
+import pyttsx3
 
 
 def main():
@@ -12,7 +13,7 @@ def main():
     # Set up BayMax
     baymax = Baymax(voice_engine=engine, speech_recognizer=None)
     is_activated = False
-    
+
     # Baymax listens and responds
     while True:
         what_human_said = baymax.listen()
