@@ -48,3 +48,13 @@ class Baymax:
     def greet(self):
         # TODO
         pass
+
+
+    def surf_webbrowser(self):
+        # TODO
+        pass
+
+
+    def search_wikipedia(self):
+        # TODO
+        pass
