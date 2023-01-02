@@ -57,8 +57,11 @@ class Baymax:
 
 
     def translate(self):
-        # TODO
-        pass
+        self.speak('What language do you want to translate from?')
+        from_lang = self.listen()
+        self.speak('What language do you want to translate to?')
+        to_lang = self.listen()
+        # TODO: Import IBM Watson API to translate text
 
 
     def read_text_from_image(self):
