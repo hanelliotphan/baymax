@@ -46,8 +46,14 @@ class Baymax:
 
 
     def greet(self):
-        # TODO
-        pass
+        current_hour = int(datetime.datetime.now().hour)
+        if 0 <= current_hour < 12:
+            self.speak('Good morning!')
+        elif 12 <= current_hour < 18:
+            self.speak('Good afternoon!')
+        else:
+            self.speak('Good evening!')
+        self.speak('I hope you are doing well at the moment. You are the best!')
 
 
     def surf_webbrowser(self):
