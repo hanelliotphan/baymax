@@ -56,6 +56,16 @@ class Baymax:
         self.speak('I hope you are doing well at the moment. You are the best!')
 
 
+    def translate(self):
+        # TODO
+        pass
+
+
+    def read_text_from_image(self):
+        # TODO
+        pass
+
+
     def surf_webbrowser(self):
         # TODO
         pass
