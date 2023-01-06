@@ -4,6 +4,8 @@ import speech_recognition as sr
 import webbrowser
 import wikipedia
 
+from translate import Translate, LanguageTranslatorV3, IAMAuthenticator
+
 
 class Baymax:
     def __init__(self, voice_engine, speech_recognizer):
@@ -57,11 +59,12 @@ class Baymax:
 
 
     def translate(self):
-        self.speak('What language do you want to translate from?')
-        from_lang = self.listen()
+        self.speak('What sentence do you want to translate?')
+        sentence_to_translate = self.listen()
         self.speak('What language do you want to translate to?')
         to_lang = self.listen()
-        # TODO: Import IBM Watson API to translate text
+        # TODO: Translate sentence here
+
 
 
     def read_text_from_image(self):
