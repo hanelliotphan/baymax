@@ -19,6 +19,9 @@ def main():
         what_human_said = baymax.listen()
         if "ouch" in what_human_said.lower():
             is_activated = baymax.activate()
+        if is_activated:
+            pass
+            # TODO: Add functionalities by case here
         if "satisfied with my care" in what_human_said.lower():
             is_activated = baymax.deactivate()
             break

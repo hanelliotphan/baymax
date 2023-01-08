@@ -66,7 +66,6 @@ class Baymax:
         # TODO: Translate sentence here
 
 
-
     def read_text_from_image(self):
         # TODO
         pass
