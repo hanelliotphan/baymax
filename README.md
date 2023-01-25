@@ -38,3 +38,7 @@ Then, we run
 ```bash
 $ python3 main.py
 ```
+
+**NOTE**: If you face the `KeyError: 'VoiceAge'` problem, please go to the 
+`nsss.py` in your folder (the full error message should display the full path),
+and remove the `attr['VoiceAge']`
