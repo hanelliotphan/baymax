@@ -23,7 +23,7 @@ class Translate:
             'kannada': 'kn', 'korean': 'ko',
             'latvian': 'lv', 'lithuanian': 'lt',
             'malay': 'ms', 'malayalam': 'ml', 'maltese': 'mt', 'marathi': 'mr', 'montenegrin': 'cnr',
-            'nepali': 'ne', 'norwegian (bokmål)': 'nb',
+            'nepali': 'ne', 'norwegian': 'nb',
             'polish': 'pl', 'portuguese': 'pt', 'punjabi (indian)': 'pa', 'punjabi (pakistani)': 'pa-PK',
             'romanian': 'ro', 'russian': 'ru',
             'serbian': 'sr', 'sinhala': 'si', 'slovak': 'sk', 'slovenian': 'sl', 'spanish': 'es', 'swedish': 'sv',
@@ -33,9 +33,56 @@ class Translate:
             'welsh': 'cy'
         }
         self.languages = self.language_code_mapping.keys()
+
+
+    def speak(self, text_to_speech):
+        self.voice_engine.say(text_to_speech)
+        self.voice_engine.runAndWait()
+
+
+    def translate_chinese(self, to_lang, is_language_undetected):
+        if to_lang.lower() == "chinese":
+            self.speak('There are Simplified Chinese and Traditional Chinese. What would you like to choose?')
+            chinese_type = self.listen()
+            if "simplified" in chinese_type.lower():
+                to_lang = "chinese (simplified)"
+            elif "traditional" in chinese_type.lower():
+                to_lang = "chinese (traditional)"
+            else:
+                is_language_undetected = True
+        elif to_lang.lower() in ["chinese simplified", "simplified chinese"]:
+            to_lang = "chinese (simplified)"
+        elif to_lang.lower() in ["chinese traditional", "traditional chinese"]:
+            to_lang = "chinese (traditional)"
+        else:
+            is_language_undetected = True
+        return to_lang, is_language_undetected
     
 
-    def translate(self, sentence, from_lang, to_lang):
+    def translate_french(self, to_lang, is_language_undetected):
+        if to_lang.lower() == "french":
+            self.speak('There are Native French and Canadian French. Which one would you choose?')
+            french_type = self.listen()
+            if "native" in french_type.lower():
+                to_lang = "french"
+            elif "canadian" in french_type.lower():
+                to_lang = "french (canadian)"
+            else:
+                is_language_undetected
+        elif to_lang.lower() in ["french canadian", "canadian french"]:
+            to_lang = "french (canadian)"
+        elif to_lang.lower() in ["french", "native french", "french native", "original french", "french original", "just french"]:
+            to_lang = "french"
+        else:
+            is_language_undetected = True
+        return to_lang, is_language_undetected
+    
+
+    def translate_punjabi(self, to_lang, is_language_undetected):
+        pass # TODO
+    
+
+    def translate_with_ibm_watson(self, sentence, from_lang, to_lang):
         if from_lang not in self.languages:
             return 'The language you want to translate from is not in the database. Please choose another language'
         if to_lang not in self.languages:
