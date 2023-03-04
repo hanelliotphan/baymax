@@ -2,7 +2,7 @@
 Simulation of Baymax from Disney Big Hero 6 using Python, Pyttsx3 voice engine 
 and Google speech recognition
 
-## Instructions
+## Installations
 First, we need to install `portaudio` from Homebrew. This package is required
 for Python library `pyaudio`
 
@@ -41,4 +41,8 @@ $ python3 main.py
 
 **NOTE**: If you face the `KeyError: 'VoiceAge'` problem, please go to the 
 `nsss.py` in your folder (the full error message should display the full path),
-and remove the `attr['VoiceAge']`
+and remove the `attr['VoiceAge']` line code
+
+## Dedications
+I dedicate this hard work commitment to my mom, whom has sacrificed everything for my better future. I hope I have 
+made you proud!
