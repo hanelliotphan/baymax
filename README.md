@@ -36,7 +36,7 @@ If you have not installed Macports, please download Macports from [this link](ht
 
 Then, we run
 ```bash
-$ python3 main.py
+$ python3 src/main.py
 ```
 
 **NOTE**: If you face the `KeyError: 'VoiceAge'` problem, please go to the 
