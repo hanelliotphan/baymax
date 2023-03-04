@@ -2,6 +2,9 @@
 Simulation of Baymax from Disney Big Hero 6 using Python, Pyttsx3 voice engine 
 and Google speech recognition
 
+## Development Status
+`IN PROGRESS`
+
 ## Installations
 First, we need to install `portaudio` from Homebrew. This package is required
 for Python library `pyaudio`
