@@ -47,5 +47,5 @@ $ python3 src/main.py
 and remove the `attr['VoiceAge']` line code
 
 ## Dedications
-I dedicate this hard work commitment to my mom, whom has sacrificed everything for my better future. I hope I have 
-made you proud!
+I dedicate this hard work commitment to my mom, whom has sacrificed everything 
+for my better future. I hope I have made you proud!
