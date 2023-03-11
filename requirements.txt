@@ -1,4 +1,5 @@
 ibm_watson
+openai
 pyaudio
 pyttsx3
 SpeechRecognition

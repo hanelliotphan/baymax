@@ -17,14 +17,14 @@ def main():
     # Baymax listens and responds
     while True:
         what_human_said = baymax.listen()
-        if "ouch" in what_human_said.lower():
+        if "ow" or "ouch" in what_human_said.lower():
             is_activated = baymax.activate()
-        if is_activated:
-            pass
-            # TODO: Add functionalities by case here
-        if "satisfied with my care" in what_human_said.lower():
+            continue
+        elif "satisfied with my care" in what_human_said.lower():
             is_activated = baymax.deactivate()
             break
+        if is_activated:
+            baymax.simple_chat(what_human_said)
 
 
 if __name__ == "__main__":
