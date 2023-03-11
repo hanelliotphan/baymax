@@ -5,6 +5,11 @@ Google speech recognition and ChatGPT API.
 ## Development Status
 `IN PROGRESS`
 
+Some desired features for future development:
+- Read texts from images
+- Predict risks of certain health issues from X-ray scans
+- Provide medical advice
+
 ## Installations
 First, we need to install `portaudio` from Homebrew. This package is required
 for Python library `pyaudio`:
